@@ -54,8 +54,8 @@
                 return customBootstrappers.Single();
             }
 
-            Type bootstrapper;
-            if (TryFindMostDerivedType(customBootstrappers, out bootstrapper))
+            var bootstrapper = FindMostDerivedType(customBootstrappers);
+            if (bootstrapper != null)
             {
                 return bootstrapper;
             }
